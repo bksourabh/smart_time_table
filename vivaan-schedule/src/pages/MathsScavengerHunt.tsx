@@ -40,7 +40,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The adventure begins at the front door!',
     clue: 'Welcome home, Vivaan! Your treasure hunt begins here. Solve this puzzle to find where to go next. Hint: It\'s where the family gathers to watch TV!',
     bgColor: 'from-amber-400 to-orange-500',
-    question: getQuestionById('mult-3') || null,
+    question: getQuestionById('mult-e1') || null, // 7 × 8
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The cozy living room with the big TV',
     clue: 'Great job finding the living room! Look behind the couch cushions... Solve this to discover where snacks are made!',
     bgColor: 'from-blue-400 to-indigo-500',
-    question: getQuestionById('div-2') || null,
+    question: getQuestionById('div-e2') || null, // 24 stickers
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ const huntLocations: HuntLocation[] = [
     description: 'Where delicious meals are prepared',
     clue: 'Mmm, something smells good! Check inside the cookie jar... Your next clue leads to where Mum and Dad sleep!',
     bgColor: 'from-green-400 to-emerald-500',
-    question: getQuestionById('frac-3') || null,
+    question: getQuestionById('frac-m1') || null, // 3/4 of 20
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The biggest bedroom in the house',
     clue: 'You found the master bedroom! Look under the pillow... Next, head to where your little sibling dreams!',
     bgColor: 'from-purple-400 to-violet-500',
-    question: getQuestionById('time-2') || null,
+    question: getQuestionById('time-m1') || null, // time question
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ const huntLocations: HuntLocation[] = [
     description: 'A cozy room with toys and a crib',
     clue: 'Shh, the baby might be sleeping! Check the toy box... Now find the room with all the books!',
     bgColor: 'from-pink-400 to-rose-500',
-    question: getQuestionById('shape-3') || null,
+    question: getQuestionById('shp-e1') || null, // shapes
   },
   {
     id: 6,
@@ -85,7 +85,7 @@ const huntLocations: HuntLocation[] = [
     description: 'Where homework and reading happens',
     clue: 'Knowledge is power! Look behind the bookshelf... Your next stop is the room where guests sleep!',
     bgColor: 'from-cyan-400 to-teal-500',
-    question: getQuestionById('place-4') || null,
+    question: getQuestionById('pv-m1') || null, // place value
   },
   {
     id: 7,
@@ -94,7 +94,7 @@ const huntLocations: HuntLocation[] = [
     description: 'A welcoming room for visitors',
     clue: 'Welcome, guest! Check the bedside drawer... Now find the room where games are played!',
     bgColor: 'from-orange-400 to-red-500',
-    question: getQuestionById('area-2') || null,
+    question: getQuestionById('ap-e1') || null, // area & perimeter
   },
   {
     id: 8,
@@ -103,7 +103,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The fun room with all the games',
     clue: 'Game on! Look inside the board game box... Next, head to where Vivaan sleeps!',
     bgColor: 'from-indigo-400 to-purple-500',
-    question: getQuestionById('money-3') || null,
+    question: getQuestionById('mon-m1') || null, // money
   },
   {
     id: 9,
@@ -112,7 +112,7 @@ const huntLocations: HuntLocation[] = [
     description: 'Your very own special room!',
     clue: 'This is YOUR room, Vivaan! Check under your bed... Now go outside to the beautiful garden!',
     bgColor: 'from-yellow-400 to-amber-500',
-    question: getQuestionById('pattern-2') || null,
+    question: getQuestionById('pat-m1') || null, // patterns
   },
   {
     id: 10,
@@ -121,7 +121,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The green garden with flowers',
     clue: 'Fresh air and sunshine! Look behind the big tree... Your next adventure awaits at the pool!',
     bgColor: 'from-lime-400 to-green-500',
-    question: getQuestionById('chance-2') || null,
+    question: getQuestionById('ch-m1') || null, // chance
   },
   {
     id: 11,
@@ -130,7 +130,7 @@ const huntLocations: HuntLocation[] = [
     description: 'The sparkling blue swimming pool',
     clue: 'Splash! Check the pool towel basket... One more puzzle before the treasure!',
     bgColor: 'from-sky-400 to-blue-500',
-    question: getQuestionById('data-3') || null,
+    question: getQuestionById('dg-m1') || null, // data & graphs
   },
   {
     id: 12,
