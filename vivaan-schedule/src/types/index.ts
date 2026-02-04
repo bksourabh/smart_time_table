@@ -52,7 +52,41 @@ export interface CompletedTask {
   completedAt: string;
 }
 
+// Victorian Curriculum Year 4 English Categories
+// Strand 1: Reading and Viewing
+// Strand 2: Writing
+// Strand 3: Speaking and Listening (Spelling focus)
+export interface EnglishQuestion {
+  id: string;
+  strand: 'reading' | 'writing' | 'spelling-vocabulary';
+  category:
+    // Reading and Viewing
+    | 'comprehension'
+    | 'inference'
+    | 'text-structure'
+    | 'literary-devices'
+    // Writing
+    | 'grammar'
+    | 'punctuation'
+    | 'sentence-structure'
+    | 'text-types'
+    // Spelling and Vocabulary
+    | 'spelling'
+    | 'homophones'
+    | 'vocabulary'
+    | 'word-families';
+  difficulty: 'easy' | 'medium' | 'hard';
+  question: string;
+  passage?: string; // For reading comprehension questions
+  options?: string[];
+  correctAnswer: string;
+  explanation: string;
+  hint?: string;
+}
+
 export type CategoryType = Task['category'];
 export type DifficultyType = MathQuestion['difficulty'];
 export type MathCategoryType = MathQuestion['category'];
 export type MathStrandType = MathQuestion['strand'];
+export type EnglishCategoryType = EnglishQuestion['category'];
+export type EnglishStrandType = EnglishQuestion['strand'];

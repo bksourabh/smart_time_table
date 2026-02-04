@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Calculator, Trophy, Calendar } from 'lucide-react';
+import { Calculator, Trophy, Calendar, BookOpen } from 'lucide-react';
 import { TaskCard } from '../components/TaskCard';
 import { Congratulations } from '../components/Congratulations';
 import { weeklySchedule, getTodayName } from '../data/timetable';
@@ -129,28 +129,54 @@ export function Home() {
       </header>
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {/* Maths Practice Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link
-            to="/maths"
-            className="block mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+        {/* Practice Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {/* Maths Practice Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-4">
-              <div className="bg-white/20 p-4 rounded-xl group-hover:scale-110 transition-transform">
-                <Calculator className="w-8 h-8" />
+            <Link
+              to="/maths"
+              className="block h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="bg-white/20 p-4 rounded-xl group-hover:scale-110 transition-transform">
+                  <Calculator className="w-8 h-8" />
+                </div>
+                <div className="flex-grow">
+                  <h2 className="text-xl font-bold">Maths Practice</h2>
+                  <p className="text-white/80 text-sm">Year 4 NAPLAN Questions</p>
+                </div>
+                <div className="text-3xl group-hover:translate-x-2 transition-transform">→</div>
               </div>
-              <div className="flex-grow">
-                <h2 className="text-xl font-bold">Maths Practice</h2>
-                <p className="text-white/80 text-sm">Year 4 NAPLAN Questions</p>
+            </Link>
+          </motion.div>
+
+          {/* English Practice Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Link
+              to="/english"
+              className="block h-full bg-gradient-to-r from-orange-500 via-rose-500 to-pink-500 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="bg-white/20 p-4 rounded-xl group-hover:scale-110 transition-transform">
+                  <BookOpen className="w-8 h-8" />
+                </div>
+                <div className="flex-grow">
+                  <h2 className="text-xl font-bold">English Practice</h2>
+                  <p className="text-white/80 text-sm">Reading, Writing & Spelling</p>
+                </div>
+                <div className="text-3xl group-hover:translate-x-2 transition-transform">→</div>
               </div>
-              <div className="text-3xl group-hover:translate-x-2 transition-transform">→</div>
-            </div>
-          </Link>
-        </motion.div>
+            </Link>
+          </motion.div>
+        </div>
 
         {/* Day Selector */}
         <motion.div
