@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Lightbulb, Check, X, RotateCcw, Home, Shuffle } from 'lucide-react';
+import { ArrowLeft, Lightbulb, Check, X, RotateCcw, Home, Shuffle, MapPin, Sparkles } from 'lucide-react';
 import { categoryLabels, getQuestionsByCategory, getRandomQuestions } from '../data/mathsQuestions';
 import type { MathQuestion, MathCategoryType } from '../types';
 
@@ -95,10 +95,65 @@ export function MathsPractice() {
         </header>
 
         <main className="max-w-5xl mx-auto px-4 py-8">
+          {/* Treasure Hunt Adventure */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <Link
+              to="/maths/treasure-hunt"
+              className="block mb-6 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+            >
+              {/* Sparkle effects */}
+              <div className="absolute inset-0 pointer-events-none">
+                <motion.div
+                  className="absolute top-4 right-8 text-2xl"
+                  animate={{ scale: [1, 1.2, 1], rotate: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  ✨
+                </motion.div>
+                <motion.div
+                  className="absolute bottom-4 right-20 text-xl"
+                  animate={{ scale: [1, 1.3, 1], rotate: [0, -10, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                >
+                  💎
+                </motion.div>
+                <motion.div
+                  className="absolute top-6 right-32 text-lg"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+                >
+                  ⭐
+                </motion.div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-white/20 p-4 rounded-xl group-hover:scale-110 transition-transform">
+                  <div className="relative">
+                    <MapPin className="w-8 h-8" />
+                    <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-yellow-300" />
+                  </div>
+                </div>
+                <div className="flex-grow text-left">
+                  <div className="flex items-center gap-2">
+                    <h2 className="text-xl font-bold">House Treasure Hunt</h2>
+                    <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs font-medium">NEW!</span>
+                  </div>
+                  <p className="text-white/80 text-sm">Solve 12 maths puzzles to find the treasure!</p>
+                  <p className="text-white/60 text-xs mt-1">🏠 5 Bedrooms • 🏊 Swimming Pool • 💎 Hidden Treasure</p>
+                </div>
+                <div className="text-3xl group-hover:translate-x-2 transition-transform">→</div>
+              </div>
+            </Link>
+          </motion.div>
+
           {/* Mixed Quiz */}
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
             onClick={() => startQuiz('mixed')}
             className="w-full mb-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
           >
