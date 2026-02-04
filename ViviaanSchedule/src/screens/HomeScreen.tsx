@@ -188,7 +188,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
       {/* Header */}
       <View style={styles.header}>
         <View>
-          <Text style={styles.greeting}>Hello, Viviaan! 👋</Text>
+          <Text style={styles.greeting}>Hello, Vivaan! 👋</Text>
           <Text style={styles.date}>{formatDate()}</Text>
           <Text style={styles.school}>St Margaret's Berwick Grammar - Grade 4</Text>
         </View>
@@ -279,7 +279,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
       {/* Congratulations Banner */}
       <CongratulationsBanner
         visible={showCongrats}
-        userName="Viviaan"
+        userName="Vivaan"
       />
 
       {/* Close Congrats Button */}
