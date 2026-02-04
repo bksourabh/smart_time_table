@@ -12,9 +12,33 @@ export interface DaySchedule {
   tasks: Task[];
 }
 
+// Victorian Curriculum Year 4 Mathematics Categories
+// Strand 1: Number and Algebra
+// Strand 2: Measurement and Geometry
+// Strand 3: Statistics and Probability
 export interface MathQuestion {
   id: string;
-  category: 'place-value' | 'multiplication' | 'division' | 'fractions' | 'decimals' | 'money' | 'patterns' | 'word-problems';
+  strand: 'number-algebra' | 'measurement-geometry' | 'statistics-probability';
+  category:
+    // Number and Algebra
+    | 'place-value'
+    | 'multiplication'
+    | 'division'
+    | 'fractions'
+    | 'decimals'
+    | 'money'
+    | 'patterns'
+    // Measurement and Geometry
+    | 'length-mass-capacity'
+    | 'area-perimeter'
+    | 'time'
+    | 'shapes'
+    | 'angles'
+    | 'position-maps'
+    | 'symmetry'
+    // Statistics and Probability
+    | 'chance'
+    | 'data-graphs';
   difficulty: 'easy' | 'medium' | 'hard';
   question: string;
   options?: string[];
@@ -31,3 +55,4 @@ export interface CompletedTask {
 export type CategoryType = Task['category'];
 export type DifficultyType = MathQuestion['difficulty'];
 export type MathCategoryType = MathQuestion['category'];
+export type MathStrandType = MathQuestion['strand'];
