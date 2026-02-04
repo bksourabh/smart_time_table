@@ -1,0 +1,86 @@
+import type { MathQuestion, MathCategoryType } from '../types';
+
+export const mathsQuestions: MathQuestion[] = [
+  // PLACE VALUE
+  { id: 'pv-e1', category: 'place-value', difficulty: 'easy', question: 'What is the place value of 5 in the number 3,527?', options: ['5', '50', '500', '5000'], correctAnswer: '500', explanation: 'In 3,527, the digit 5 is in the hundreds place. So its place value is 5 × 100 = 500.', hint: 'Look at which position the 5 is in: ones, tens, hundreds, or thousands.' },
+  { id: 'pv-e2', category: 'place-value', difficulty: 'easy', question: 'Which number is greater: 4,892 or 4,829?', options: ['4,892', '4,829', 'They are equal', 'Cannot tell'], correctAnswer: '4,892', explanation: 'Both numbers have 4 thousands and 8 hundreds. Looking at the tens: 4,892 has 9 tens while 4,829 has 2 tens. Since 9 > 2, 4,892 is greater.', hint: 'Compare the digits from left to right until you find a difference.' },
+  { id: 'pv-e3', category: 'place-value', difficulty: 'easy', question: 'Round 3,456 to the nearest hundred.', options: ['3,400', '3,500', '3,000', '3,460'], correctAnswer: '3,500', explanation: 'Look at the tens digit (5). Since it is 5 or more, round up. 3,456 rounded to the nearest hundred is 3,500.', hint: "Look at the tens digit. If it's 5 or more, round up." },
+  { id: 'pv-m1', category: 'place-value', difficulty: 'medium', question: 'What number is 1,000 more than 8,456?', options: ['9,456', '8,556', '18,456', '8,466'], correctAnswer: '9,456', explanation: 'Adding 1,000 to 8,456: 8,456 + 1,000 = 9,456. The thousands digit increases by 1.', hint: 'Adding 1,000 changes only the thousands place.' },
+  { id: 'pv-m2', category: 'place-value', difficulty: 'medium', question: 'Which of these shows 6,742 in expanded form?', options: ['6 + 7 + 4 + 2', '6000 + 700 + 40 + 2', '6000 + 700 + 42', '67 + 42'], correctAnswer: '6000 + 700 + 40 + 2', explanation: 'Expanded form shows each digit multiplied by its place value: 6×1000 + 7×100 + 4×10 + 2×1 = 6000 + 700 + 40 + 2.', hint: 'Multiply each digit by its place value (thousands, hundreds, tens, ones).' },
+  { id: 'pv-h1', category: 'place-value', difficulty: 'hard', question: 'I am a 4-digit number. My thousands digit is 3 more than my ones digit. My hundreds digit is 5. My tens digit is twice my ones digit. My ones digit is 2. What number am I?', options: ['5,542', '5,452', '5,524', '5,244'], correctAnswer: '5,542', explanation: 'Ones digit = 2. Tens digit = 2 × 2 = 4. Hundreds digit = 5. Thousands digit = 2 + 3 = 5. The number is 5,542.', hint: 'Start with the ones digit and work out each digit one by one.' },
+
+  // MULTIPLICATION
+  { id: 'mult-e1', category: 'multiplication', difficulty: 'easy', question: 'What is 7 × 8?', options: ['54', '56', '63', '48'], correctAnswer: '56', explanation: '7 × 8 = 56. You can remember this as 5-6-7-8 (56 = 7 × 8).', hint: 'Think: 7 × 8 gives you 56. The digits 5, 6, 7, 8 are in order!' },
+  { id: 'mult-e2', category: 'multiplication', difficulty: 'easy', question: 'What is 9 × 6?', options: ['45', '54', '63', '56'], correctAnswer: '54', explanation: '9 × 6 = 54. One trick: 9 × 6 means 10 × 6 - 6 = 60 - 6 = 54.', hint: 'Try: 10 × 6 = 60, then subtract 6.' },
+  { id: 'mult-e3', category: 'multiplication', difficulty: 'easy', question: 'A pack has 4 apples. How many apples are in 6 packs?', options: ['20', '24', '28', '18'], correctAnswer: '24', explanation: '6 packs × 4 apples = 24 apples.', hint: 'Multiply the number of packs by apples in each pack.' },
+  { id: 'mult-m1', category: 'multiplication', difficulty: 'medium', question: 'What is 12 × 7?', options: ['74', '84', '77', '82'], correctAnswer: '84', explanation: '12 × 7 = (10 × 7) + (2 × 7) = 70 + 14 = 84.', hint: 'Break it down: 10 × 7 and 2 × 7, then add.' },
+  { id: 'mult-m2', category: 'multiplication', difficulty: 'medium', question: 'If each box contains 8 pencils and there are 9 boxes, how many pencils are there in total?', options: ['64', '72', '81', '63'], correctAnswer: '72', explanation: '9 × 8 = 72 pencils. Each box has 8 pencils, and we have 9 boxes.', hint: 'Multiply: number of boxes × pencils in each box.' },
+  { id: 'mult-h1', category: 'multiplication', difficulty: 'hard', question: 'What is 25 × 4?', options: ['100', '90', '125', '80'], correctAnswer: '100', explanation: '25 × 4 = 100. This is a useful fact: 4 quarters make $1.00 (100 cents).', hint: 'Think about money: 4 quarters = $1.00.' },
+  { id: 'mult-h2', category: 'multiplication', difficulty: 'hard', question: 'There are 6 rows of chairs. Each row has 8 chairs. 5 more chairs are added. How many chairs in total?', options: ['48', '53', '58', '43'], correctAnswer: '53', explanation: 'First, 6 × 8 = 48 chairs in rows. Then add 5 more: 48 + 5 = 53 chairs.', hint: 'First calculate chairs in rows, then add the extra chairs.' },
+
+  // DIVISION
+  { id: 'div-e1', category: 'division', difficulty: 'easy', question: 'What is 36 ÷ 6?', options: ['5', '6', '7', '8'], correctAnswer: '6', explanation: '36 ÷ 6 = 6. You can check: 6 × 6 = 36.', hint: 'What number times 6 equals 36?' },
+  { id: 'div-e2', category: 'division', difficulty: 'easy', question: '24 stickers are shared equally among 4 children. How many stickers does each child get?', options: ['5', '6', '8', '4'], correctAnswer: '6', explanation: '24 ÷ 4 = 6. Each child gets 6 stickers.', hint: 'Divide the total stickers by the number of children.' },
+  { id: 'div-m1', category: 'division', difficulty: 'medium', question: 'What is 63 ÷ 7?', options: ['7', '8', '9', '10'], correctAnswer: '9', explanation: '63 ÷ 7 = 9. Check: 7 × 9 = 63.', hint: 'Think: 7 times what equals 63?' },
+  { id: 'div-m2', category: 'division', difficulty: 'medium', question: 'A farmer has 72 eggs. She puts them into cartons of 6. How many cartons does she fill?', options: ['10', '11', '12', '13'], correctAnswer: '12', explanation: '72 ÷ 6 = 12 cartons. The farmer can fill 12 cartons with 6 eggs each.', hint: 'Divide total eggs by eggs per carton.' },
+  { id: 'div-h1', category: 'division', difficulty: 'hard', question: '96 students need to be put into teams of 8. How many teams can be formed?', options: ['10', '11', '12', '13'], correctAnswer: '12', explanation: '96 ÷ 8 = 12 teams. Check: 12 × 8 = 96.', hint: 'Divide total students by students per team.' },
+
+  // FRACTIONS
+  { id: 'frac-e1', category: 'fractions', difficulty: 'easy', question: 'What fraction of this shape is coloured? (Imagine a circle split into 4 equal parts with 1 part coloured)', options: ['1/2', '1/3', '1/4', '2/4'], correctAnswer: '1/4', explanation: 'When a shape is divided into 4 equal parts and 1 is coloured, the fraction is 1/4 (one quarter).', hint: 'Count total parts (bottom number) and coloured parts (top number).' },
+  { id: 'frac-e2', category: 'fractions', difficulty: 'easy', question: 'Which fraction is equivalent to 1/2?', options: ['1/4', '2/4', '3/4', '1/3'], correctAnswer: '2/4', explanation: '1/2 = 2/4. If you multiply both the top and bottom of 1/2 by 2, you get 2/4.', hint: 'Multiply both parts of the fraction by the same number.' },
+  { id: 'frac-m1', category: 'fractions', difficulty: 'medium', question: 'What is 3/4 of 20?', options: ['12', '15', '16', '18'], correctAnswer: '15', explanation: 'To find 3/4 of 20: First find 1/4 of 20 = 5. Then 3/4 = 3 × 5 = 15.', hint: 'Find 1/4 first, then multiply by 3.' },
+  { id: 'frac-m2', category: 'fractions', difficulty: 'medium', question: 'Which is greater: 2/3 or 3/4?', options: ['2/3', '3/4', 'They are equal', 'Cannot compare'], correctAnswer: '3/4', explanation: '2/3 = 8/12 and 3/4 = 9/12. Since 9/12 > 8/12, we know 3/4 > 2/3.', hint: 'Find a common denominator to compare.' },
+  { id: 'frac-h1', category: 'fractions', difficulty: 'hard', question: 'Convert the improper fraction 11/4 to a mixed number.', options: ['2 1/4', '2 3/4', '3 1/4', '1 3/4'], correctAnswer: '2 3/4', explanation: '11 ÷ 4 = 2 remainder 3. So 11/4 = 2 whole ones and 3/4 = 2 3/4.', hint: 'Divide 11 by 4. The quotient is the whole number, remainder over 4 is the fraction.' },
+
+  // DECIMALS
+  { id: 'dec-e1', category: 'decimals', difficulty: 'easy', question: 'What decimal is the same as 1/2?', options: ['0.2', '0.5', '0.25', '0.1'], correctAnswer: '0.5', explanation: '1/2 = 0.5. Half of 1 is 0.5.', hint: 'What is half of 1.0?' },
+  { id: 'dec-e2', category: 'decimals', difficulty: 'easy', question: 'What is 0.3 + 0.4?', options: ['0.7', '0.34', '0.12', '7'], correctAnswer: '0.7', explanation: '0.3 + 0.4 = 0.7. Think of it as 3 tenths + 4 tenths = 7 tenths.', hint: 'Add the tenths together.' },
+  { id: 'dec-m1', category: 'decimals', difficulty: 'medium', question: 'Which decimal represents 3/10?', options: ['0.03', '0.3', '3.0', '0.33'], correctAnswer: '0.3', explanation: '3/10 = 0.3. The tenths place is directly after the decimal point.', hint: 'Tenths go in the first place after the decimal.' },
+  { id: 'dec-m2', category: 'decimals', difficulty: 'medium', question: 'Put these decimals in order from smallest to largest: 0.5, 0.35, 0.53', options: ['0.35, 0.5, 0.53', '0.5, 0.35, 0.53', '0.53, 0.5, 0.35', '0.35, 0.53, 0.5'], correctAnswer: '0.35, 0.5, 0.53', explanation: '0.35 = 35 hundredths, 0.5 = 50 hundredths, 0.53 = 53 hundredths. So order is 0.35, 0.5, 0.53.', hint: 'Think of all decimals as hundredths to compare.' },
+  { id: 'dec-h1', category: 'decimals', difficulty: 'hard', question: 'What is 0.75 as a fraction in simplest form?', options: ['75/100', '3/4', '7/5', '15/20'], correctAnswer: '3/4', explanation: '0.75 = 75/100. Simplify by dividing both by 25: 75÷25 = 3, 100÷25 = 4. So 0.75 = 3/4.', hint: '0.75 = 75/100. Find the largest number that divides both 75 and 100.' },
+
+  // MONEY
+  { id: 'mon-e1', category: 'money', difficulty: 'easy', question: 'Tom has $5.00. He buys a toy for $3.50. How much change does he get?', options: ['$1.00', '$1.50', '$2.00', '$2.50'], correctAnswer: '$1.50', explanation: '$5.00 - $3.50 = $1.50. Tom gets $1.50 change.', hint: 'Subtract the price from the amount paid.' },
+  { id: 'mon-e2', category: 'money', difficulty: 'easy', question: 'A sandwich costs $4.20. What coins could you use to pay exactly?', options: ['4 × $1 + 2 × 10c', '4 × $1 + 1 × 20c', '4 × $1 + 2 × 5c', 'All of the above'], correctAnswer: '4 × $1 + 1 × 20c', explanation: '$4.20 = $4 + 20 cents. 4 × $1 + 1 × 20c = $4.20.', hint: 'Which option adds up to exactly $4.20?' },
+  { id: 'mon-m1', category: 'money', difficulty: 'medium', question: 'Emma buys 3 apples at 65 cents each. How much does she spend in total?', options: ['$1.85', '$1.95', '$2.05', '$1.65'], correctAnswer: '$1.95', explanation: '3 × 65 cents = 195 cents = $1.95.', hint: 'Multiply the price by the quantity, then convert to dollars.' },
+  { id: 'mon-h1', category: 'money', difficulty: 'hard', question: 'Jack has $10. He buys 2 books at $3.45 each. How much money does he have left?', options: ['$3.10', '$3.45', '$6.90', '$6.55'], correctAnswer: '$3.10', explanation: '2 × $3.45 = $6.90. Change: $10.00 - $6.90 = $3.10.', hint: 'First find the total cost, then subtract from $10.' },
+
+  // PATTERNS
+  { id: 'pat-e1', category: 'patterns', difficulty: 'easy', question: 'What is the next number in this pattern? 3, 6, 9, 12, ___', options: ['13', '14', '15', '18'], correctAnswer: '15', explanation: 'The pattern is counting by 3s (multiples of 3). After 12 comes 15.', hint: 'Each number increases by 3.' },
+  { id: 'pat-e2', category: 'patterns', difficulty: 'easy', question: 'Complete the pattern: 5, 10, 15, 20, ___', options: ['22', '24', '25', '30'], correctAnswer: '25', explanation: 'The pattern is counting by 5s. After 20 comes 25.', hint: 'Look at how much each number increases.' },
+  { id: 'pat-m1', category: 'patterns', difficulty: 'medium', question: 'What is the missing number? 2, 4, 8, ___, 32', options: ['12', '14', '16', '24'], correctAnswer: '16', explanation: 'Each number is doubled (×2). 2→4→8→16→32.', hint: 'Look at the relationship between consecutive numbers.' },
+  { id: 'pat-m2', category: 'patterns', difficulty: 'medium', question: 'If the pattern continues, what is the 6th term? 4, 8, 12, 16, 20, ___', options: ['22', '24', '26', '28'], correctAnswer: '24', explanation: 'Adding 4 each time: 4, 8, 12, 16, 20, 24. The 6th term is 24.', hint: 'Each term increases by 4.' },
+  { id: 'pat-h1', category: 'patterns', difficulty: 'hard', question: 'In this pattern, what is the 10th term? 3, 7, 11, 15, ...', options: ['35', '39', '43', '47'], correctAnswer: '39', explanation: 'The pattern adds 4 each time. Formula: 3 + (n-1)×4. For n=10: 3 + 9×4 = 3 + 36 = 39.', hint: 'Find the rule (+4 each time) and apply it 9 more times from the first term.' },
+
+  // WORD PROBLEMS
+  { id: 'wp-e1', category: 'word-problems', difficulty: 'easy', question: 'Sarah has 24 stickers. She gives 8 stickers to her friend. How many stickers does Sarah have now?', options: ['14', '16', '18', '32'], correctAnswer: '16', explanation: '24 - 8 = 16. Sarah has 16 stickers left.', hint: 'Subtract the stickers given away from the total.' },
+  { id: 'wp-e2', category: 'word-problems', difficulty: 'easy', question: 'There are 5 bags. Each bag has 7 oranges. How many oranges are there in total?', options: ['12', '30', '35', '42'], correctAnswer: '35', explanation: '5 × 7 = 35 oranges in total.', hint: 'Multiply the number of bags by oranges in each bag.' },
+  { id: 'wp-m1', category: 'word-problems', difficulty: 'medium', question: 'A train has 8 carriages. Each carriage has 42 seats. How many seats are on the train?', options: ['336', '328', '342', '348'], correctAnswer: '336', explanation: '8 × 42 = 336. Break it down: 8 × 40 = 320 and 8 × 2 = 16. Total: 320 + 16 = 336.', hint: 'Use the distributive property: 8 × (40 + 2).' },
+  { id: 'wp-m2', category: 'word-problems', difficulty: 'medium', question: 'Mia reads 12 pages every day. How many pages will she read in 2 weeks?', options: ['84', '148', '168', '24'], correctAnswer: '168', explanation: '2 weeks = 14 days. 12 × 14 = 168 pages.', hint: 'First find how many days are in 2 weeks.' },
+  { id: 'wp-h1', category: 'word-problems', difficulty: 'hard', question: 'A baker makes 144 cupcakes. He puts them in boxes of 12. He sells 7 boxes. How many cupcakes are left?', options: ['60', '72', '84', '56'], correctAnswer: '60', explanation: '144 ÷ 12 = 12 boxes total. After selling 7: 12 - 7 = 5 boxes left. Cupcakes: 5 × 12 = 60.', hint: 'Find total boxes, subtract sold boxes, then multiply remaining boxes by 12.' },
+  { id: 'wp-h2', category: 'word-problems', difficulty: 'hard', question: 'A rectangle has a length of 9 cm and a width of 6 cm. What is its perimeter?', options: ['15 cm', '30 cm', '54 cm', '27 cm'], correctAnswer: '30 cm', explanation: 'Perimeter = 2 × (length + width) = 2 × (9 + 6) = 2 × 15 = 30 cm.', hint: 'Perimeter is the distance around the shape: 2 lengths + 2 widths.' },
+];
+
+export const categoryLabels: Record<MathCategoryType, { label: string; icon: string; color: string }> = {
+  'place-value': { label: 'Place Value', icon: '🔢', color: 'from-blue-500 to-indigo-600' },
+  'multiplication': { label: 'Multiplication', icon: '✖️', color: 'from-orange-500 to-red-600' },
+  'division': { label: 'Division', icon: '➗', color: 'from-purple-500 to-pink-600' },
+  'fractions': { label: 'Fractions', icon: '🥧', color: 'from-green-500 to-emerald-600' },
+  'decimals': { label: 'Decimals', icon: '🔵', color: 'from-cyan-500 to-blue-600' },
+  'money': { label: 'Money', icon: '💰', color: 'from-yellow-500 to-amber-600' },
+  'patterns': { label: 'Patterns', icon: '🔄', color: 'from-teal-500 to-cyan-600' },
+  'word-problems': { label: 'Word Problems', icon: '📝', color: 'from-rose-500 to-pink-600' },
+};
+
+export const getQuestionsByCategory = (category: MathCategoryType): MathQuestion[] => {
+  return mathsQuestions.filter((q) => q.category === category);
+};
+
+export const getQuestionsByDifficulty = (difficulty: 'easy' | 'medium' | 'hard'): MathQuestion[] => {
+  return mathsQuestions.filter((q) => q.difficulty === difficulty);
+};
+
+export const getRandomQuestions = (count: number): MathQuestion[] => {
+  const shuffled = [...mathsQuestions].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};

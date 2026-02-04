@@ -27,3 +27,7 @@ export interface CompletedTask {
   taskId: string;
   completedAt: string;
 }
+
+export type CategoryType = Task['category'];
+export type DifficultyType = MathQuestion['difficulty'];
+export type MathCategoryType = MathQuestion['category'];

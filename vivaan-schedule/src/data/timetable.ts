@@ -1,4 +1,4 @@
-import { DaySchedule } from '../types';
+import type { DaySchedule, CategoryType } from '../types';
 
 export const weeklySchedule: DaySchedule[] = [
   {
@@ -139,7 +139,7 @@ export const weeklySchedule: DaySchedule[] = [
       { id: 'sun-1', time: '7:30 AM', title: 'Wake up, freshen up quickly', category: 'morning', icon: '🌅' },
       { id: 'sun-2', time: '8:00 AM', title: 'Light breakfast, get ready', category: 'meal', icon: '🍞' },
       { id: 'sun-3', time: '8:15 AM', title: 'Leave for swimming', category: 'skill', icon: '🚗' },
-      { id: 'sun-4', time: '8:30 AM', title: 'SWIMMING LESSON (Splash\'s)', category: 'skill', duration: '30 min', icon: '🏊' },
+      { id: 'sun-4', time: '8:30 AM', title: "SWIMMING LESSON (Splash's)", category: 'skill', duration: '30 min', icon: '🏊' },
       { id: 'sun-5', time: '9:00 AM', title: 'Swimming ends, leave pool', category: 'skill', icon: '🏊' },
       { id: 'sun-6', time: '9:45 AM', title: 'Arrive home, proper breakfast', category: 'meal', icon: '🍳' },
       { id: 'sun-7', time: '10:30 AM', title: 'FAMILY HIKING / Nature Outing', category: 'family', icon: '🥾' },
@@ -161,15 +161,15 @@ export const weeklySchedule: DaySchedule[] = [
   },
 ];
 
-export const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
-  morning: { bg: '#FFF3E0', text: '#E65100', border: '#FFB74D' },
-  school: { bg: '#E3F2FD', text: '#1565C0', border: '#64B5F6' },
-  study: { bg: '#F3E5F5', text: '#7B1FA2', border: '#BA68C8' },
-  play: { bg: '#E8F5E9', text: '#2E7D32', border: '#81C784' },
-  skill: { bg: '#FFF8E1', text: '#F57F17', border: '#FFD54F' },
-  family: { bg: '#FCE4EC', text: '#C2185B', border: '#F48FB1' },
-  meal: { bg: '#EFEBE9', text: '#5D4037', border: '#A1887F' },
-  rest: { bg: '#E0F7FA', text: '#00838F', border: '#4DD0E1' },
+export const categoryConfig: Record<CategoryType, { bg: string; text: string; border: string; gradient: string }> = {
+  morning: { bg: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', gradient: 'from-orange-400 to-amber-500' },
+  school: { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', gradient: 'from-blue-400 to-indigo-500' },
+  study: { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', gradient: 'from-purple-400 to-pink-500' },
+  play: { bg: 'bg-green-50', text: 'text-green-700', border: 'border-green-200', gradient: 'from-green-400 to-emerald-500' },
+  skill: { bg: 'bg-yellow-50', text: 'text-yellow-700', border: 'border-yellow-200', gradient: 'from-yellow-400 to-orange-500' },
+  family: { bg: 'bg-pink-50', text: 'text-pink-700', border: 'border-pink-200', gradient: 'from-pink-400 to-rose-500' },
+  meal: { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', gradient: 'from-amber-400 to-yellow-500' },
+  rest: { bg: 'bg-cyan-50', text: 'text-cyan-700', border: 'border-cyan-200', gradient: 'from-cyan-400 to-teal-500' },
 };
 
 export const getDaySchedule = (dayName: string): DaySchedule | undefined => {
@@ -182,4 +182,9 @@ export const getTodaySchedule = (): DaySchedule | undefined => {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const today = days[new Date().getDay()];
   return getDaySchedule(today);
+};
+
+export const getTodayName = (): string => {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[new Date().getDay()];
 };
