@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { TaskCard } from '../components/TaskCard';
 import { CongratulationsBanner } from '../components/CongratulationsBanner';
 import { weeklySchedule, getTodaySchedule } from '../data/timetable';
@@ -21,7 +21,7 @@ type RootStackParamList = {
   MathsPractice: undefined;
 };
 
-type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 interface HomeScreenProps {
   navigation: HomeScreenNavigationProp;

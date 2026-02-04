@@ -9,7 +9,7 @@ import {
   Animated,
   TextInput,
 } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackNavigationProp } from '@react-navigation/stack';
 import {
   mathsQuestions,
   categoryLabels,
@@ -23,7 +23,7 @@ type RootStackParamList = {
   MathsPractice: undefined;
 };
 
-type MathsPracticeScreenNavigationProp = NativeStackNavigationProp<
+type MathsPracticeScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   'MathsPractice'
 >;
