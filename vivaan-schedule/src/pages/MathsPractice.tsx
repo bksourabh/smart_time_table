@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Lightbulb, Check, X, RotateCcw, Home, Shuffle, MapPin, Sparkles } from 'lucide-react';
-import { categoryLabels, getQuestionsByCategory, getRandomQuestions } from '../data/mathsQuestions';
-import type { MathQuestion, MathCategoryType } from '../types';
+import { ArrowLeft, Lightbulb, Check, X, RotateCcw, Home, Shuffle, MapPin, Sparkles, Zap } from 'lucide-react';
+import { categoryLabels, getQuestionsByCategory, getRandomQuestions, getRandomQuestionsByDifficulty, difficultyLabels, getQuestionsByDifficulty } from '../data/mathsQuestions';
+import type { MathQuestion, MathCategoryType, DifficultyType } from '../types';
 
-type ViewMode = 'menu' | 'quiz' | 'result';
+type ViewMode = 'menu' | 'difficulty' | 'quiz' | 'result';
 
-const difficultyColors = {
+const difficultyColors: Record<DifficultyType, string> = {
   easy: 'bg-green-100 text-green-700',
   medium: 'bg-yellow-100 text-yellow-700',
   hard: 'bg-red-100 text-red-700',
+  expert: 'bg-purple-100 text-purple-700',
 };
 
 export function MathsPractice() {
@@ -21,13 +22,27 @@ export function MathsPractice() {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [showHint, setShowHint] = useState(false);
-
   const categories = Object.entries(categoryLabels) as [MathCategoryType, typeof categoryLabels[MathCategoryType]][];
+  const difficulties = Object.entries(difficultyLabels) as [DifficultyType, typeof difficultyLabels[DifficultyType]][];
 
   const startQuiz = (category: MathCategoryType | 'mixed') => {
-    const selected = category === 'mixed'
-      ? getRandomQuestions(10)
-      : getQuestionsByCategory(category).sort(() => Math.random() - 0.5).slice(0, 5);
+    let selected: MathQuestion[];
+    if (category === 'mixed') {
+      selected = getRandomQuestions(10);
+    } else {
+      selected = getQuestionsByCategory(category).sort(() => Math.random() - 0.5).slice(0, 5);
+    }
+    setQuestions(selected);
+    setCurrentIndex(0);
+    setScore(0);
+    setSelectedAnswer(null);
+    setShowResult(false);
+    setShowHint(false);
+    setViewMode('quiz');
+  };
+
+  const startDifficultyQuiz = (difficulty: DifficultyType) => {
+    const selected = getRandomQuestionsByDifficulty(difficulty, 10);
     setQuestions(selected);
     setCurrentIndex(0);
     setScore(0);
@@ -169,6 +184,41 @@ export function MathsPractice() {
             </div>
           </motion.button>
 
+          {/* Challenge by Difficulty */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="mb-8"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Zap className="w-6 h-6 text-purple-600" />
+              <h2 className="text-xl font-bold text-gray-800">Challenge by Difficulty</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {difficulties.map(([key, value], index) => (
+                <motion.button
+                  key={key}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + index * 0.05 }}
+                  onClick={() => startDifficultyQuiz(key)}
+                  className={`bg-gradient-to-br ${value.color} rounded-2xl p-5 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 group relative overflow-hidden`}
+                >
+                  <div className="absolute top-2 right-2 text-2xl opacity-20 group-hover:opacity-40 transition-opacity">
+                    {value.icon}
+                  </div>
+                  <div className="text-4xl mb-2">{value.icon}</div>
+                  <h3 className="font-bold text-lg">{value.label}</h3>
+                  <p className="text-white/80 text-xs mt-1">{value.description}</p>
+                  <p className="text-white/60 text-xs mt-2">
+                    {getQuestionsByDifficulty(key).length} questions
+                  </p>
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+
           {/* Categories */}
           <h2 className="text-xl font-bold text-gray-800 mb-4">Choose a Topic</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -177,7 +227,7 @@ export function MathsPractice() {
                 key={key}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: 0.3 + index * 0.03 }}
                 onClick={() => startQuiz(key)}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 group"
               >

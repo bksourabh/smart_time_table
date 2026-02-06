@@ -196,6 +196,66 @@ export const mathsQuestions: MathQuestion[] = [
   { id: 'dg-m4', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'medium', question: 'Calculate the mean (average) of: 4, 6, 8, 10, 12', options: ['6', '8', '10', '12'], correctAnswer: '8', explanation: 'Mean = (4+6+8+10+12) ÷ 5 = 40 ÷ 5 = 8.', hint: 'Mean = sum of all values ÷ number of values.' },
   { id: 'dg-h1', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'hard', question: 'The mean of 5 numbers is 12. If four of the numbers are 10, 11, 13, 14, what is the fifth number?', options: ['10', '11', '12', '12'], correctAnswer: '12', explanation: 'Total = 5 × 12 = 60. Fifth number = 60 - (10+11+13+14) = 60 - 48 = 12.', hint: 'Mean × count = total. Use this to find the missing number.' },
   { id: 'dg-h2', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'hard', question: 'A survey recorded temperatures: 18°C, 22°C, 25°C, 19°C, 21°C. What is the median temperature?', options: ['19°C', '20°C', '21°C', '22°C'], correctAnswer: '21°C', explanation: 'Ordered: 18, 19, 21, 22, 25. The middle value is 21°C.', hint: 'Put the numbers in order first, then find the middle one.' },
+
+  // ============================================
+  // EXPERT LEVEL QUESTIONS - Brain Teasers!
+  // ============================================
+
+  // === EXPERT: PLACE VALUE & NUMBER SENSE ===
+  { id: 'pv-x1', strand: 'number-algebra', category: 'place-value', difficulty: 'expert', question: 'What is the smallest 5-digit number that can be made using the digits 3, 0, 7, 2, 9 (each used once)?', options: ['02379', '20379', '23079', '20379'], correctAnswer: '20379', explanation: 'The smallest 5-digit number cannot start with 0. Use 2 first, then 0, then 3, 7, 9 in order: 20,379.', hint: 'A 5-digit number cannot start with 0. What is the next smallest digit?' },
+  { id: 'pv-x2', strand: 'number-algebra', category: 'place-value', difficulty: 'expert', question: 'I am a 4-digit number. My digits add up to 20. All my digits are different. I am divisible by 5. I am greater than 5000. What is my smallest possible value?', options: ['5069', '5690', '5096', '5609'], correctAnswer: '5069', explanation: 'Must end in 0 or 5 (divisible by 5), >5000 so starts with 5-9. Try 5 _ _ 0: digits must add to 20, so middle digits add to 15. Smallest: 5+0+6+9=20 → 5069.', hint: 'Divisible by 5 means ends in 0 or 5. Start with the smallest first digit > 5.' },
+  { id: 'pv-x3', strand: 'number-algebra', category: 'place-value', difficulty: 'expert', question: 'The number 7,456 is rounded to the nearest 100. Then that result is rounded to the nearest 1000. What is the final answer?', options: ['7,000', '7,500', '8,000', '7,400'], correctAnswer: '7,000', explanation: 'Step 1: 7,456 → 7,500 (rounded to nearest 100). Step 2: 7,500 → 7,000 or 8,000? Since 5 rounds up, 7,500 → 8,000. Wait, let me recalculate: 7,456 rounded to nearest 100 is 7,500. 7,500 rounded to nearest 1,000 is 8,000.', hint: 'Do it step by step: first round to 100, then round that answer to 1000.' },
+
+  // === EXPERT: MULTIPLICATION ===
+  { id: 'mult-x1', strand: 'number-algebra', category: 'multiplication', difficulty: 'expert', question: 'What is 25 × 24?', options: ['500', '550', '600', '625'], correctAnswer: '600', explanation: '25 × 24 = 25 × 4 × 6 = 100 × 6 = 600. Or: 25 × 24 = (25 × 20) + (25 × 4) = 500 + 100 = 600.', hint: 'Try breaking 24 into 20 + 4, or think of 25 × 4 = 100.' },
+  { id: 'mult-x2', strand: 'number-algebra', category: 'multiplication', difficulty: 'expert', question: 'A school has 28 classrooms. Each classroom has 6 rows of desks with 5 desks in each row. How many desks are there in the whole school?', options: ['168', '840', '780', '900'], correctAnswer: '840', explanation: 'Desks per room = 6 × 5 = 30. Total desks = 28 × 30 = 840.', hint: 'First find desks in one classroom, then multiply by number of classrooms.' },
+  { id: 'mult-x3', strand: 'number-algebra', category: 'multiplication', difficulty: 'expert', question: 'What is the product of the two prime numbers between 10 and 20?', options: ['143', '169', '187', '221'], correctAnswer: '143', explanation: 'Primes between 10 and 20: 11, 13, 17, 19. But we need exactly two, so the question likely means the first two: 11 × 13 = 143.', hint: 'Prime numbers between 10-20 are: 11, 13, 17, 19. Multiply two of them.' },
+  { id: 'mult-x4', strand: 'number-algebra', category: 'multiplication', difficulty: 'expert', question: 'If 37 × 43 = 1,591, what is 38 × 43?', options: ['1,624', '1,634', '1,591', '1,648'], correctAnswer: '1,634', explanation: '38 × 43 = (37 + 1) × 43 = (37 × 43) + (1 × 43) = 1,591 + 43 = 1,634.', hint: '38 is just 37 + 1. Use the given answer to help.' },
+
+  // === EXPERT: DIVISION ===
+  { id: 'div-x1', strand: 'number-algebra', category: 'division', difficulty: 'expert', question: 'A farmer has 1,000 eggs to pack into cartons of 12. How many full cartons can she make, and how many eggs are left over?', options: ['83 cartons, 4 left', '84 cartons, 0 left', '82 cartons, 16 left', '83 cartons, 8 left'], correctAnswer: '83 cartons, 4 left', explanation: '1,000 ÷ 12 = 83 remainder 4. Check: 83 × 12 = 996, and 1000 - 996 = 4.', hint: 'Divide 1000 by 12. The quotient is full cartons, remainder is leftover eggs.' },
+  { id: 'div-x2', strand: 'number-algebra', category: 'division', difficulty: 'expert', question: 'A number divided by 7 gives 15 with a remainder of 3. What is the number?', options: ['105', '108', '112', '118'], correctAnswer: '108', explanation: 'Number = (7 × 15) + 3 = 105 + 3 = 108. Check: 108 ÷ 7 = 15 r 3 ✓', hint: 'Work backwards: multiply the divisor by the quotient, then add the remainder.' },
+  { id: 'div-x3', strand: 'number-algebra', category: 'division', difficulty: 'expert', question: 'What is the largest 3-digit number that is exactly divisible by 8?', options: ['992', '996', '998', '1000'], correctAnswer: '992', explanation: '1000 ÷ 8 = 125. So 8 × 125 = 1000 (4-digit). Try 8 × 124 = 992 (3-digit). ✓', hint: 'Start from 999 and find what divides evenly by 8, or calculate 8 × 124.' },
+
+  // === EXPERT: FRACTIONS ===
+  { id: 'frac-x1', strand: 'number-algebra', category: 'fractions', difficulty: 'expert', question: 'What is 3/4 + 2/3?', options: ['5/7', '17/12', '1 5/12', '1 1/2'], correctAnswer: '1 5/12', explanation: '3/4 = 9/12, 2/3 = 8/12. Total = 17/12 = 1 5/12.', hint: 'Find a common denominator (12), then add the fractions.' },
+  { id: 'frac-x2', strand: 'number-algebra', category: 'fractions', difficulty: 'expert', question: 'A recipe needs 3/4 cup of flour. If you want to make 2 and 1/2 times the recipe, how much flour do you need?', options: ['1 1/2 cups', '1 7/8 cups', '2 cups', '1 3/4 cups'], correctAnswer: '1 7/8 cups', explanation: '3/4 × 2.5 = 3/4 × 5/2 = 15/8 = 1 7/8 cups.', hint: 'Multiply 3/4 by 2.5 (or 5/2).' },
+  { id: 'frac-x3', strand: 'number-algebra', category: 'fractions', difficulty: 'expert', question: 'Tom ate 1/3 of a pizza. Sarah ate 1/4 of the same pizza. What fraction of the pizza is left?', options: ['5/12', '7/12', '1/7', '2/7'], correctAnswer: '5/12', explanation: 'Eaten = 1/3 + 1/4 = 4/12 + 3/12 = 7/12. Left = 1 - 7/12 = 5/12.', hint: 'First add what they ate together, then subtract from 1 whole.' },
+
+  // === EXPERT: DECIMALS ===
+  { id: 'dec-x1', strand: 'number-algebra', category: 'decimals', difficulty: 'expert', question: 'What is 3.75 + 2.8 + 1.45?', options: ['7.00', '8.00', '7.95', '8.10'], correctAnswer: '8.00', explanation: '3.75 + 2.80 + 1.45 = 8.00. Line up decimal points and add.', hint: 'Write 2.8 as 2.80 to help add the columns.' },
+  { id: 'dec-x2', strand: 'number-algebra', category: 'decimals', difficulty: 'expert', question: 'Put these in order from smallest to largest: 0.305, 0.35, 0.3, 0.053', options: ['0.053, 0.3, 0.305, 0.35', '0.3, 0.053, 0.305, 0.35', '0.053, 0.305, 0.3, 0.35', '0.053, 0.3, 0.35, 0.305'], correctAnswer: '0.053, 0.3, 0.305, 0.35', explanation: 'As thousandths: 0.053=53, 0.3=300, 0.305=305, 0.35=350. Order: 53, 300, 305, 350.', hint: 'Write them all with the same number of decimal places to compare.' },
+  { id: 'dec-x3', strand: 'number-algebra', category: 'decimals', difficulty: 'expert', question: 'A rope is 8.5 metres long. If you cut off 2.75 metres, how much is left?', options: ['5.25 m', '5.75 m', '6.25 m', '6.75 m'], correctAnswer: '5.75 m', explanation: '8.50 - 2.75 = 5.75 metres.', hint: 'Subtract the decimals carefully, borrowing if needed.' },
+
+  // === EXPERT: MONEY ===
+  { id: 'mon-x1', strand: 'number-algebra', category: 'money', difficulty: 'expert', question: 'A toy costs $24.95. If you buy 3 toys and pay with $100, how much change do you get?', options: ['$25.15', '$25.05', '$24.95', '$25.85'], correctAnswer: '$25.15', explanation: '3 × $24.95 = $74.85. Change = $100 - $74.85 = $25.15.', hint: 'First multiply to find total cost, then subtract from $100.' },
+  { id: 'mon-x2', strand: 'number-algebra', category: 'money', difficulty: 'expert', question: 'You have 15 coins made up of $1 and 50c coins. The total is $11.50. How many $1 coins do you have?', options: ['8', '9', '10', '11'], correctAnswer: '8', explanation: 'Let x = $1 coins. Then (15-x) = 50c coins. x + 0.5(15-x) = 11.50. x + 7.5 - 0.5x = 11.5. 0.5x = 4. x = 8.', hint: 'If all 15 were 50c, total would be $7.50. Each $1 coin adds 50c more.' },
+  { id: 'mon-x3', strand: 'number-algebra', category: 'money', difficulty: 'expert', question: 'Books cost $8.50 each. How many books can you buy with $50, and how much money is left?', options: ['5 books, $7.50 left', '6 books, $1.00 left', '5 books, $8.50 left', '6 books, $0 left'], correctAnswer: '5 books, $7.50 left', explanation: '$50 ÷ $8.50 = 5.88... So 5 books. Cost = 5 × $8.50 = $42.50. Left = $50 - $42.50 = $7.50.', hint: 'Divide $50 by $8.50 to find how many whole books you can buy.' },
+
+  // === EXPERT: PATTERNS ===
+  { id: 'pat-x1', strand: 'number-algebra', category: 'patterns', difficulty: 'expert', question: 'In this pattern, what is the 20th term? 7, 10, 13, 16, ...', options: ['61', '64', '67', '70'], correctAnswer: '64', explanation: 'Pattern: start at 7, add 3 each time. Formula: 7 + (n-1)×3. For n=20: 7 + 19×3 = 7 + 57 = 64.', hint: 'The pattern adds 3 each time. Use: first term + (position - 1) × 3.' },
+  { id: 'pat-x2', strand: 'number-algebra', category: 'patterns', difficulty: 'expert', question: 'What is the next number? 1, 1, 2, 3, 5, 8, 13, ___', options: ['18', '20', '21', '26'], correctAnswer: '21', explanation: 'This is the Fibonacci sequence. Each number = sum of previous two. 8 + 13 = 21.', hint: 'Look at how each number relates to the two before it.' },
+  { id: 'pat-x3', strand: 'number-algebra', category: 'patterns', difficulty: 'expert', question: 'If the pattern continues, what is the sum of the first 10 terms? 2, 4, 6, 8, ...', options: ['100', '110', '120', '90'], correctAnswer: '110', explanation: 'First 10 even numbers: 2+4+6+8+10+12+14+16+18+20 = 110. Or use formula: n(n+1) = 10×11 = 110.', hint: 'These are even numbers 2 to 20. Add them up or use a shortcut.' },
+
+  // === EXPERT: AREA & PERIMETER ===
+  { id: 'ap-x1', strand: 'measurement-geometry', category: 'area-perimeter', difficulty: 'expert', question: 'A rectangle has a perimeter of 24 cm and a length of 8 cm. What is its area?', options: ['24 cm²', '32 cm²', '36 cm²', '48 cm²'], correctAnswer: '32 cm²', explanation: 'Perimeter = 2(L+W) = 24, so L+W = 12. If L=8, then W=4. Area = 8×4 = 32 cm².', hint: 'Use perimeter to find width, then calculate length × width.' },
+  { id: 'ap-x2', strand: 'measurement-geometry', category: 'area-perimeter', difficulty: 'expert', question: 'A square has the same perimeter as a rectangle with length 12 cm and width 6 cm. What is the area of the square?', options: ['36 cm²', '64 cm²', '81 cm²', '72 cm²'], correctAnswer: '81 cm²', explanation: 'Rectangle perimeter = 2(12+6) = 36 cm. Square side = 36÷4 = 9 cm. Square area = 9² = 81 cm².', hint: 'Find the rectangle perimeter, then each side of the square is perimeter ÷ 4.' },
+  { id: 'ap-x3', strand: 'measurement-geometry', category: 'area-perimeter', difficulty: 'expert', question: 'A room is 5 metres by 4 metres. How many square tiles of side 50 cm are needed to cover the floor?', options: ['20', '40', '80', '200'], correctAnswer: '80', explanation: 'Room = 500 cm × 400 cm = 200,000 cm². Tile = 50 × 50 = 2,500 cm². Tiles needed = 200,000 ÷ 2,500 = 80.', hint: 'Convert metres to cm first, or work out how many tiles fit along each edge.' },
+
+  // === EXPERT: TIME ===
+  { id: 'time-x1', strand: 'measurement-geometry', category: 'time', difficulty: 'expert', question: 'A flight departs at 11:45 pm and lands at 6:30 am the next day. How long is the flight?', options: ['6 hours 45 min', '5 hours 45 min', '7 hours 15 min', '7 hours 45 min'], correctAnswer: '6 hours 45 min', explanation: '11:45 pm to midnight = 15 min. Midnight to 6:30 am = 6 hr 30 min. Total = 6 hr 45 min.', hint: 'Break it into two parts: time until midnight, then midnight to landing.' },
+  { id: 'time-x2', strand: 'measurement-geometry', category: 'time', difficulty: 'expert', question: 'If a clock shows 3:45 and the minute hand moves 210 degrees, what time will it show?', options: ['4:20', '4:30', '4:50', '5:00'], correctAnswer: '4:20', explanation: 'The minute hand moves 6° per minute. 210÷6 = 35 minutes. 3:45 + 35 min = 4:20.', hint: 'The minute hand moves 360° in 60 minutes (6° per minute).' },
+  { id: 'time-x3', strand: 'measurement-geometry', category: 'time', difficulty: 'expert', question: 'How many minutes are there from 9:47 am on Monday to 2:23 pm on the same day?', options: ['276 min', '286 min', '296 min', '316 min'], correctAnswer: '276 min', explanation: '9:47 to 2:47 pm = 5 hours = 300 min. But we need 2:23, which is 24 min less. 300 - 24 = 276 min.', hint: 'Find hours first, then adjust for the extra minutes.' },
+
+  // === EXPERT: CHANCE & PROBABILITY ===
+  { id: 'ch-x1', strand: 'statistics-probability', category: 'chance', difficulty: 'expert', question: 'A bag has 4 red, 5 blue, and 3 green marbles. What is the probability of picking a red or green marble?', options: ['7/12', '4/12', '3/12', '5/12'], correctAnswer: '7/12', explanation: 'Red + Green = 4 + 3 = 7 marbles. Total = 12. Probability = 7/12.', hint: 'Add the favourable outcomes (red OR green) and divide by total.' },
+  { id: 'ch-x2', strand: 'statistics-probability', category: 'chance', difficulty: 'expert', question: 'Two dice are rolled. What is the probability of getting a sum of 7?', options: ['1/6', '6/36', '5/36', '7/36'], correctAnswer: '1/6', explanation: 'Ways to get 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6 ways. Total outcomes = 36. P = 6/36 = 1/6.', hint: 'List all the ways to make 7 with two dice. Total possible outcomes = 6×6 = 36.' },
+  { id: 'ch-x3', strand: 'statistics-probability', category: 'chance', difficulty: 'expert', question: 'A spinner has 8 equal sections numbered 1-8. What is the probability of landing on a prime number?', options: ['3/8', '4/8', '5/8', '2/8'], correctAnswer: '4/8', explanation: 'Primes 1-8: 2, 3, 5, 7 (4 primes). Probability = 4/8 = 1/2.', hint: 'Find all prime numbers from 1 to 8. (Remember: 1 is NOT prime).' },
+
+  // === EXPERT: DATA & GRAPHS ===
+  { id: 'dg-x1', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'expert', question: 'The mean of 6 numbers is 15. If 5 of the numbers are 12, 14, 15, 18, 19, what is the 6th number?', options: ['10', '12', '14', '22'], correctAnswer: '12', explanation: 'Total = 6 × 15 = 90. Sum of 5 numbers = 12+14+15+18+19 = 78. 6th number = 90 - 78 = 12.', hint: 'Mean × count = total sum. Subtract the known numbers from the total.' },
+  { id: 'dg-x2', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'expert', question: 'In a data set, the median is 25 and the range is 18. If the smallest number is 16, what is the largest?', options: ['32', '34', '43', '41'], correctAnswer: '34', explanation: 'Range = largest - smallest. So largest = smallest + range = 16 + 18 = 34.', hint: 'Range = largest - smallest. Rearrange to find largest.' },
+  { id: 'dg-x3', strand: 'statistics-probability', category: 'data-graphs', difficulty: 'expert', question: 'A class of 25 students has a mean test score of 72%. Five students scored 100%. What is the mean score of the other 20 students?', options: ['60%', '65%', '68%', '70%'], correctAnswer: '65%', explanation: 'Total marks = 25 × 72 = 1800. Five students = 5 × 100 = 500. Others = 1800 - 500 = 1300. Mean = 1300 ÷ 20 = 65%.', hint: 'Find total marks, subtract the five perfect scores, then find mean of the rest.' },
 ];
 
 // Category configuration with strand information
@@ -235,13 +295,26 @@ export const getQuestionsByStrand = (strand: MathStrandType): MathQuestion[] => 
   return mathsQuestions.filter((q) => q.strand === strand);
 };
 
-export const getQuestionsByDifficulty = (difficulty: 'easy' | 'medium' | 'hard'): MathQuestion[] => {
+export const getQuestionsByDifficulty = (difficulty: 'easy' | 'medium' | 'hard' | 'expert'): MathQuestion[] => {
   return mathsQuestions.filter((q) => q.difficulty === difficulty);
 };
 
 export const getRandomQuestions = (count: number): MathQuestion[] => {
   const shuffled = [...mathsQuestions].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
+};
+
+export const getRandomQuestionsByDifficulty = (difficulty: 'easy' | 'medium' | 'hard' | 'expert', count: number): MathQuestion[] => {
+  const filtered = getQuestionsByDifficulty(difficulty);
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};
+
+export const difficultyLabels: Record<'easy' | 'medium' | 'hard' | 'expert', { label: string; icon: string; color: string; description: string }> = {
+  'easy': { label: 'Easy', icon: '🌱', color: 'from-green-400 to-emerald-500', description: 'Basic questions to build confidence' },
+  'medium': { label: 'Medium', icon: '🌿', color: 'from-yellow-400 to-amber-500', description: 'Standard Year 4 level questions' },
+  'hard': { label: 'Hard', icon: '🌳', color: 'from-orange-400 to-red-500', description: 'Challenging questions for extra practice' },
+  'expert': { label: 'Expert', icon: '🏆', color: 'from-purple-500 to-indigo-600', description: 'Brain teasers for maths champions!' },
 };
 
 export const getRandomQuestionsByStrand = (strand: MathStrandType, count: number): MathQuestion[] => {

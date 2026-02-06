@@ -39,7 +39,7 @@ export interface MathQuestion {
     // Statistics and Probability
     | 'chance'
     | 'data-graphs';
-  difficulty: 'easy' | 'medium' | 'hard';
+  difficulty: 'easy' | 'medium' | 'hard' | 'expert';
   question: string;
   options?: string[];
   correctAnswer: string;
